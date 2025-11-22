@@ -2,20 +2,45 @@ package com.example.gomoku.player;
 
 import java.util.Scanner;
 
+/**
+ * Represents a human player in the Gomoku game.
+ * <p>
+ * This class implements the {@link Player} interface. It allows a human
+ * to enter moves via the command line.
+ */
 public class HumanPlayer implements Player {
-    private final char symbol;      // ✅ declare final field
-    private final Scanner scanner;  // ✅ scanner to read input
+    private final char symbol;       // The symbol representing this player (e.g., 'X' or 'O')
+    private final Scanner scanner;   // Scanner to read input from the user
 
+    /**
+     * Creates a new human player with a symbol and input scanner.
+     *
+     * @param symbol  The character representing this player on the board.
+     * @param scanner Scanner object used to read input from the user.
+     */
     public HumanPlayer(char symbol, Scanner scanner) {
-        this.symbol = symbol;       // ✅ initialize the symbol
+        this.symbol = symbol;
         this.scanner = scanner;
     }
 
+    /**
+     * Returns the symbol representing this player.
+     *
+     * @return the player symbol (e.g., 'X' or 'O').
+     */
     @Override
     public char getSymbol() {
-        return symbol;              // ✅ now it's safe to use
+        return symbol;
     }
 
+    /**
+     * Prompts the user to enter a move.
+     * <p>
+     * The move should be entered as "row col" (space-separated integers).
+     * This method loops until valid input is provided.
+     *
+     * @return an integer array of size 2 containing the row and column of the move.
+     */
     @Override
     public int[] getMove() {
         while (true) {
