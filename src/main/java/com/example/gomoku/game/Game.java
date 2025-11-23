@@ -58,9 +58,11 @@ public class Game {
 
             // Attempt to place the symbol
             if (!board.place(row, col, current.getSymbol())) {
-                System.out.println("Invalid move, try again.");
+                System.out.println("Invalid move, skipping turn.");
+                current = (current == p1) ? p2 : p1;  // switch player
                 continue;
             }
+
 
             // Check for winner
             Optional<Character> win = board.winner();

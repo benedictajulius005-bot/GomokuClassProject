@@ -40,7 +40,7 @@ public class RandomAIPlayer implements Player {
      */
     @Override
     public int[] getMove() {
-        int row = rand.nextInt(10); // TODO: adjust dynamically
+        int row = rand.nextInt(10);
         int col = rand.nextInt(10);
         return new int[]{row, col};
     }
