@@ -3,45 +3,43 @@ package com.example.gomoku.player;
 import java.util.Random;
 
 /**
- * Represents an AI player that makes random moves in the Gomoku game.
- * <p>
- * This player randomly selects a row and column for its move.
+ * Represents an AI player that makes random moves
+ * based on the actual board size.
  */
 public class RandomAIPlayer implements Player {
+
     private final char symbol;
+    private final int rows;
+    private final int cols;
     private final Random rand = new Random();
 
     /**
-     * Constructs a RandomAIPlayer with the given symbol.
+     * Constructs an AI player that knows the board size.
      *
-     * @param symbol the character representing this player on the board
+     * @param symbol the player's symbol (e.g., 'O')
+     * @param rows total number of rows on the board
+     * @param cols total number of columns on the board
      */
-    public RandomAIPlayer(char symbol) {
+    public RandomAIPlayer(char symbol, int rows, int cols) {
         this.symbol = symbol;
+        this.rows = rows;
+        this.cols = cols;
     }
 
-    /**
-     * Returns the symbol representing this player on the board.
-     *
-     * @return the character symbol of the player
-     */
     @Override
     public char getSymbol() {
         return symbol;
     }
 
     /**
-     * Generates a random move for this AI player.
-     * <p>
-     * Note: Currently, it chooses numbers between 0 and 9.
-     * You can adjust this later to match the board size dynamically.
+     * Generates a random valid move within the board limits.
      *
-     * @return an array [row, col] representing the AI's move
+     * @return an array {row, col}
      */
     @Override
     public int[] getMove() {
-        int row = rand.nextInt(10);
-        int col = rand.nextInt(10);
+        int row = rand.nextInt(rows);
+        int col = rand.nextInt(cols);
         return new int[]{row, col};
     }
 }

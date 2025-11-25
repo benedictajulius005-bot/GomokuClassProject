@@ -42,15 +42,15 @@ public class Main {
         System.out.print("Enter cols (M): ");
         int m = Integer.parseInt(sc.nextLine());
 
-        // Initialize game and players
+
         Game game = new Game(n, m);
         HumanPlayer human = new HumanPlayer('X', sc);
-        RandomAIPlayer ai = new RandomAIPlayer('O');
+        RandomAIPlayer ai = new RandomAIPlayer('O', n, m);
 
-        // Start the game loop
+
         game.start(human, ai);
 
-        // Optionally save the finished board
+
         System.out.println("Game finished. Save board? (y/n)");
         String ans = sc.nextLine().trim();
         if (ans.equalsIgnoreCase("y")) {

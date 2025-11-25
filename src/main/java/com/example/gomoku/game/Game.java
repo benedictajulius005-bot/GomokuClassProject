@@ -64,7 +64,7 @@ public class Game {
             }
 
 
-            // Check for winner
+
             Optional<Character> win = board.winner();
             if (win.isPresent()) {
                 System.out.println(board);
@@ -72,7 +72,7 @@ public class Game {
                 break;
             }
 
-            // Check for draw
+
             if (board.isFull()) {
                 System.out.println(board);
                 System.out.println("It's a draw!");

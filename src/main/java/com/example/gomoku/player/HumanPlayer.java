@@ -9,9 +9,8 @@ import java.util.Scanner;
  * to enter moves via the command line.
  */
 public class HumanPlayer implements Player {
-    private final char symbol;       // The symbol representing this player (e.g., 'X' or 'O')
-    private final Scanner scanner;   // Scanner to read input from the user
-
+    private final char symbol;
+    private final Scanner scanner;
     /**
      * Creates a new human player with a symbol and input scanner.
      *

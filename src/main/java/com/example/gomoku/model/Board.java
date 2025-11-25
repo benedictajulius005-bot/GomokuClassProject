@@ -33,7 +33,7 @@ public class Board {
         this.rows = rows;
         this.cols = cols;
         this.grid = new char[rows][cols];
-        for (char[] row : grid) Arrays.fill(row, '.'); // initialize all cells as empty
+        for (char[] row : grid) Arrays.fill(row, '.');
     }
 
     /**
@@ -58,8 +58,8 @@ public class Board {
      * @return an Optional containing the winning player's symbol, or empty if no winner
      */
     public Optional<Character> winner() {
-        int[] dr = {0, 1, 1, -1}; // directions for row
-        int[] dc = {1, 0, 1, 1};  // directions for column
+        int[] dr = {0, 1, 1, -1};
+        int[] dc = {1, 0, 1, 1};
 
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
